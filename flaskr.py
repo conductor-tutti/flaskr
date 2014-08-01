@@ -12,7 +12,7 @@ app.config.update(dict(
     DEBUG=True,
     SECRET_KEY="birth:901120",
     USERNAME="Seulkiming",
-    PASSWORD="default"))
+    PASSWORD="1rnflrnfl^*^"))
 app.config.from_envvar("FLASKR_SETTINGS", silent=True)
 
 
@@ -59,7 +59,7 @@ def add_entry():
 @app.route("/login", methods=["GET","POST"])
 def login():
     error = None
-    if request.methods == "POST":
+    if request.method == "POST":
         if request.form["username"] != app.config["USERNAME"]:
             error = "Invalid username"
         elif request.form["password"] != app.config["PASSWORD"]:
